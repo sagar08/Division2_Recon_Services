@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/Division2_Recon_Services/v17/.suo
+/src/Division2ReconService/obj
+/src/Division2ReconService/bin
+/.vs/Division2_Recon_Services/DesignTimeBuild/.dtbcache.v2

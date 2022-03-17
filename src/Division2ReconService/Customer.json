@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "CustomerId": 3123,
+    "CustomerName": "UMC Utrecht",
+    "IsActive": true,
+    "CreatedDate": "2022-03-18T00:00:00",
+    "ModifiedDate": null
+  },
+  {
+    "Id": 2,
+    "CustomerId": 2954,
+    "CustomerName": "UMC Utrecht",
+    "IsActive": true,
+    "CreatedDate": "2022-03-18T00:00:00",
+    "ModifiedDate": null
+  },
+  {
+    "Id": 3,
+    "CustomerId": 1224,
+    "CustomerName": "AMC",
+    "IsActive": true,
+    "CreatedDate": "2022-03-18T00:00:00",
+    "ModifiedDate": null
+  }
+]
