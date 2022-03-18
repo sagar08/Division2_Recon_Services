@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Division2ReconService</name>
+    </assembly>
+    <members>
+        <member name="T:Division2ReconService.Controllers.CustomerController">
+            <summary>
+             Customer Controller
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Controllers.CustomerController.#ctor(Division2ReconService.Data.Division2ReconDbContext,Division2ReconService.Infrastructure.ILoggerManager,AutoMapper.IMapper)">
+            <summary>
+             Constructor
+            </summary>
+            <param name="dbContext"></param>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Division2ReconService.Controllers.CustomerController.GetCustomers">
+            <summary>
+            Get all active customers
+            </summary>
+            <returns>List of customers</returns>        
+        </member>
+        <member name="T:Division2ReconService.Infrastructure.ILoggerManager">
+            <summary>
+             Interface Logger Manager
+            </summary>
+        </member>
+        <member name="T:Division2ReconService.Infrastructure.LoggerManager">
+            <summary>
+            Logger Manager
+            </summary>
+        </member>
+        <member name="T:Division2ReconService.Infrastructure.MiddlewareExtensions">
+            <summary>
+            Middleware extensions
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Infrastructure.MiddlewareExtensions.ConfigureLoggerService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Logger Service
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Division2ReconService.Infrastructure.MiddlewareExtensions.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Swagger
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Division2ReconService.Infrastructure.MiddlewareExtensions.ConfigureExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure Global Exception
+            </summary>
+            <param name="app"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:Division2ReconService.Profiles.AutoMapperProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Profiles.AutoMapperProfile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

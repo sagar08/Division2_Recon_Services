@@ -1,8 +1,13 @@
 using Division2ReconService.Data;
+using Division2ReconService.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Logger
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 // Configure Database
 builder.Services.AddDbContext<Division2ReconDbContext>(options =>
@@ -17,6 +22,9 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers()
     .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
+// Configure Logger
+builder.Services.ConfigureLoggerService();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -29,13 +37,18 @@ builder.Services.AddHealthChecks()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+// Configure Swagger
+builder.Services.ConfigureSwagger();
 
 var app = builder.Build();
 
-// Seed Data
+// Configure Global Exception handler
+app.ConfigureExceptionHandler();
+
 using (var scope = app.Services.CreateScope())
 {
+    // Seed Data
     var dbContext = scope.ServiceProvider.GetRequiredService<Division2ReconDbContext>();
     var seedData = new SeedData(dbContext);
     seedData.SeedInitialDataAsync().Wait();
@@ -60,10 +73,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//    endpoints.MapHealthChecks("/health");
-//});
+app.UseSwaggerUI(s =>
+{
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Division2 Recon API V1");
+});
+
+app.MapHealthChecks("/health");
 
 app.Run();
