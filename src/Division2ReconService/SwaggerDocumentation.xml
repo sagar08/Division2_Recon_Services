@@ -4,22 +4,21 @@
         <name>Division2ReconService</name>
     </assembly>
     <members>
-        <member name="T:Division2ReconService.Controllers.CustomerController">
+        <member name="T:Division2ReconService.Controllers.CustomersController">
             <summary>
              Customer Controller
             </summary>
         </member>
-        <member name="M:Division2ReconService.Controllers.CustomerController.#ctor(Division2ReconService.Data.Division2ReconDbContext,Division2ReconService.Infrastructure.ILoggerManager,AutoMapper.IMapper)">
+        <member name="M:Division2ReconService.Controllers.CustomersController.#ctor(Division2ReconService.Infrastructure.ILoggerManager,Division2ReconService.Services.ICustomerService)">
             <summary>
              Constructor
             </summary>
-            <param name="dbContext"></param>
             <param name="logger"></param>
-            <param name="mapper"></param>
+            <param name="customerService"></param>
         </member>
-        <member name="M:Division2ReconService.Controllers.CustomerController.GetCustomers">
+        <member name="M:Division2ReconService.Controllers.CustomersController.GetActiveCustomers">
             <summary>
-            Get all active customers
+            Get active customers
             </summary>
             <returns>List of customers</returns>        
         </member>
@@ -66,6 +65,34 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="T:Division2ReconService.Services.CustomerService">
+            <summary>
+            Customer Service
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Services.CustomerService.#ctor(Division2ReconService.Data.Division2ReconDbContext,Division2ReconService.Infrastructure.ILoggerManager,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Services.CustomerService.GetActiveCustomers">
+            <summary>
+            Get active customers
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Division2ReconService.Services.ICustomerService">
+            <summary>
+             Customer Service Contract
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Services.ICustomerService.GetActiveCustomers">
+            <summary>
+            Get active customers
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

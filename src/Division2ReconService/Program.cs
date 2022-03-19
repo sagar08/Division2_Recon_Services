@@ -1,5 +1,6 @@
 using Division2ReconService.Data;
 using Division2ReconService.Infrastructure;
+using Division2ReconService.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using NLog;
@@ -25,10 +26,6 @@ builder.Services.AddControllers()
 // Configure Logger
 builder.Services.ConfigureLoggerService();
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-
 // Add HealthChecks
 builder.Services.AddHealthChecks()
     .AddCheck("Service", () => { return HealthCheckResult.Healthy("OK"); })
@@ -40,6 +37,11 @@ builder.Services.AddEndpointsApiExplorer();
 
 // Configure Swagger
 builder.Services.ConfigureSwagger();
+
+builder.Services.AddControllers();
+
+// Add services to the container.
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 var app = builder.Build();
 
