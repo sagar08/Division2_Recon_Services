@@ -3,7 +3,7 @@
 /// <summary>
 /// Customer Machines Dto
 /// </summary>
-public class CustomerMachineResponseDto
+public class ProcessResponseDto
 {
     public int CustomerId { get; set; }
 

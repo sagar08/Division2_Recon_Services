@@ -60,14 +60,14 @@ namespace Division2ReconService.Controllers
         /// <returns>List of customers</returns>        
         [HttpGet]
         [Route("Processes")]
-        [ProducesResponseType(typeof(IEnumerable<CustomerMachineResponseDto>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ProcessResponseDto>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetProcesses()
+        public async Task<IActionResult> GetCustomerProcesses()
         {
-            var machines = await _customerService.GetCustomerMachinesAsync();
+            var machines = await _customerService.GetCustomerProcessesAsync();
             if (machines == null) return NotFound();
 
-            var response = new ResponseDto<List<CustomerMachineResponseDto>>
+            var response = new ResponseDto<List<ProcessResponseDto>>
             {
                 Success = true,
                 Message = Constants.Messages.Data_Found,

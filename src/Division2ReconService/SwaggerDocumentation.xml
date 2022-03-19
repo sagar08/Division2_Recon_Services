@@ -22,9 +22,9 @@
             </summary>
             <returns>List of customers</returns>        
         </member>
-        <member name="M:Division2ReconService.Controllers.CustomersController.GetProcesses">
+        <member name="M:Division2ReconService.Controllers.CustomersController.GetCustomerProcesses">
             <summary>
-            Get customers machines
+            Get customers processes
             </summary>
             <returns>List of customers</returns>        
         </member>
@@ -128,7 +128,7 @@
             <param name="app"></param>
             <param name="logger"></param>
         </member>
-        <member name="T:Division2ReconService.Models.CustomerMachineResponseDto">
+        <member name="T:Division2ReconService.Models.ProcessResponseDto">
             <summary>
             Customer Machines Dto
             </summary>
@@ -160,9 +160,9 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Division2ReconService.Services.CustomerService.GetCustomerMachinesAsync">
+        <member name="M:Division2ReconService.Services.CustomerService.GetCustomerProcessesAsync">
             <summary>
-            Get Customer machines
+            Get Customer processes
             </summary>
             <returns></returns>
         </member>
@@ -177,7 +177,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Division2ReconService.Services.ICustomerService.GetCustomerMachinesAsync">
+        <member name="M:Division2ReconService.Services.ICustomerService.GetCustomerProcessesAsync">
             <summary>
             Get Customer Machines
             </summary>

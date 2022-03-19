@@ -42,16 +42,16 @@ public class CustomerService : ICustomerService
     }
 
     /// <summary>
-    /// Get Customer machines
+    /// Get Customer processes
     /// </summary>
     /// <returns></returns>
-    public async Task<List<CustomerMachineResponseDto>?> GetCustomerMachinesAsync()
+    public async Task<List<ProcessResponseDto>?> GetCustomerProcessesAsync()
     {
         var machines = await _dbContext.Machines
                                                 .Join(_dbContext.Customers,
                                                 m => m.CustomerId,
                                                 c => c.Id,
-                                                (m, c) => new CustomerMachineResponseDto
+                                                (m, c) => new ProcessResponseDto
                                                 {
                                                    CustomerId = c.CustomerId,
                                                    CustomerName = c.CustomerName,

@@ -16,7 +16,7 @@ namespace Division2ReconService.Profiles
         {
             CreateMap<Customer, CustomerResponseDto>().ReverseMap();
 
-            CreateMap<Customer, CustomerMachineResponseDto>().ReverseMap();
+            CreateMap<Customer, ProcessResponseDto>().ReverseMap();
         }
     }
 }

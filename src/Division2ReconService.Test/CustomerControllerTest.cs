@@ -83,7 +83,7 @@ public class CustomerControllerTest
     public void GetCustomerMachines_Returns_OkResult()
     {
         // Act
-        var result = _controller.GetCustomerMachines().Result;
+        var result = _controller.GetCustomerProcesses().Result;
         // Assert
         Assert.IsType<OkObjectResult>(result as OkObjectResult);
     }
@@ -92,9 +92,9 @@ public class CustomerControllerTest
     public void GetCustomerMachines_Returns_AllItems()
     {
         // Act
-        var result = _controller.GetCustomerMachines().Result;
+        var result = _controller.GetCustomerProcesses().Result;
         // Assert
-        var response = Assert.IsType<ResponseDto<List<CustomerMachineResponseDto>>>(((OkObjectResult)result).Value);
+        var response = Assert.IsType<ResponseDto<List<ProcessResponseDto>>>(((OkObjectResult)result).Value);
         Assert.Equal(3, response.Data.Count);
     }
 

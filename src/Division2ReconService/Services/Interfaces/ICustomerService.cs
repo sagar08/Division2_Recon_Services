@@ -17,6 +17,6 @@ public interface ICustomerService
     /// Get Customer Machines
     /// </summary>
     /// <returns></returns>
-    Task<List<CustomerMachineResponseDto>?> GetCustomerMachinesAsync();
+    Task<List<ProcessResponseDto>?> GetCustomerProcessesAsync();
 }
 
