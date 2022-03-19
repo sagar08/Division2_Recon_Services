@@ -10,3 +10,4 @@
 /.vs/Division2_Recon_Services
 /src/Division2ReconService.Test/bin/Debug/net6.0
 /src/Division2ReconService.Test/obj
+/src/Division2ReconService/Properties/PublishProfiles

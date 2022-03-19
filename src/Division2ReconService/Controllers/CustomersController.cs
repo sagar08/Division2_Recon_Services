@@ -55,14 +55,14 @@ namespace Division2ReconService.Controllers
         }
 
         /// <summary>
-        /// Get customers machines
+        /// Get customers processes
         /// </summary>
         /// <returns>List of customers</returns>        
         [HttpGet]
-        [Route("Machines")]
+        [Route("Processes")]
         [ProducesResponseType(typeof(IEnumerable<CustomerMachineResponseDto>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetCustomerMachines()
+        public async Task<IActionResult> GetProcesses()
         {
             var machines = await _customerService.GetCustomerMachinesAsync();
             if (machines == null) return NotFound();

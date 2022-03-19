@@ -61,6 +61,7 @@ public class CustomerService : ICustomerService
                                                    Process = m.Process,
                                                    ProcessStartTime = m.ProcessStartTime,
                                                    ProcessEndTime = m.ProcessEndTime,
+                                                   SensorData = m.SensorData,
                                                    Online = m.Online,
                                                    OnlineFrom = m.OnlineFrom,
                                                    OnlineTo = m.OnlineTo

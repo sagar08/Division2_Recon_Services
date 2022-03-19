@@ -22,7 +22,7 @@
             </summary>
             <returns>List of customers</returns>        
         </member>
-        <member name="M:Division2ReconService.Controllers.CustomersController.GetCustomerMachines">
+        <member name="M:Division2ReconService.Controllers.CustomersController.GetProcesses">
             <summary>
             Get customers machines
             </summary>
