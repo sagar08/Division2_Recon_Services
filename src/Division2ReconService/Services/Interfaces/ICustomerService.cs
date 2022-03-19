@@ -11,6 +11,12 @@ public interface ICustomerService
     /// Get active customers
     /// </summary>
     /// <returns></returns>
-    Task<List<CustomerResponseDto>?> GetActiveCustomers();
+    Task<List<CustomerResponseDto>?> GetActiveCustomersAsync();
+
+    /// <summary>
+    /// Get Customer Machines
+    /// </summary>
+    /// <returns></returns>
+    Task<List<CustomerMachineResponseDto>?> GetCustomerMachinesAsync();
 }
 

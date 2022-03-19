@@ -41,7 +41,7 @@ namespace Division2ReconService.Controllers
         public async Task<ActionResult> GetActiveCustomers()
         {
             _logger.LogInfo("Fetching active customers");
-            var customers = await _customerService.GetActiveCustomers();
+            var customers = await _customerService.GetActiveCustomersAsync();
             if (customers == null) return NotFound();
 
             var response = new ResponseDto<List<CustomerResponseDto>>
@@ -52,6 +52,29 @@ namespace Division2ReconService.Controllers
             };
 
             return Ok(response);
-        }      
+        }
+
+        /// <summary>
+        /// Get customers machines
+        /// </summary>
+        /// <returns>List of customers</returns>        
+        [HttpGet]
+        [Route("Machines")]
+        [ProducesResponseType(typeof(IEnumerable<CustomerMachineResponseDto>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> GetCustomerMachines()
+        {
+            var machines = await _customerService.GetCustomerMachinesAsync();
+            if (machines == null) return NotFound();
+
+            var response = new ResponseDto<List<CustomerMachineResponseDto>>
+            {
+                Success = true,
+                Message = Constants.Messages.Data_Found,
+                Data = machines
+            };
+
+            return Ok(response);
+        }
     }
 }

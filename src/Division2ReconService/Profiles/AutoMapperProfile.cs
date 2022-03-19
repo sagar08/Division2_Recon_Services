@@ -7,7 +7,7 @@ namespace Division2ReconService.Profiles
     /// <summary>
     /// 
     /// </summary>
-    public class AutoMapperProfile: Profile
+    public class AutoMapperProfile : Profile
     {
         /// <summary>
         /// 
@@ -15,6 +15,8 @@ namespace Division2ReconService.Profiles
         public AutoMapperProfile()
         {
             CreateMap<Customer, CustomerResponseDto>().ReverseMap();
+
+            CreateMap<Customer, CustomerMachineResponseDto>().ReverseMap();
         }
     }
 }

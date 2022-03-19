@@ -22,6 +22,78 @@
             </summary>
             <returns>List of customers</returns>        
         </member>
+        <member name="M:Division2ReconService.Controllers.CustomersController.GetCustomerMachines">
+            <summary>
+            Get active customers
+            </summary>
+            <returns>List of customers</returns>        
+        </member>
+        <member name="T:Division2ReconService.Data.Customer">
+            <summary>
+            Customer context
+            </summary>
+        </member>
+        <member name="T:Division2ReconService.Data.Division2ReconDbContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Data.Division2ReconDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Division2ReconService.Data.Division2ReconDbContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Division2ReconService.Data.Division2ReconDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="P:Division2ReconService.Data.Division2ReconDbContext.Customers">
+            <summary>
+            Customers Dbset
+            </summary>
+        </member>
+        <member name="P:Division2ReconService.Data.Division2ReconDbContext.Machines">
+            <summary>
+            Machines Dbset
+            </summary>
+        </member>
+        <member name="T:Division2ReconService.Data.Machine">
+            <summary>
+            Machine context
+            </summary>
+        </member>
+        <member name="T:Division2ReconService.Data.SeedData">
+            <summary>
+            Seed Data
+            </summary>
+        </member>
+        <member name="M:Division2ReconService.Data.SeedData.#ctor(Division2ReconService.Data.Division2ReconDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:Division2ReconService.Data.SeedData.SeedInitialDataAsync">
+            <summary>
+            Seed Initial Data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Division2ReconService.Data.SeedData.SeedCustomersAsync">
+            <summary>
+             Seed Customer data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Division2ReconService.Data.SeedData.SeedMachinesAsync">
+            <summary>
+             Seed Machine data
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Division2ReconService.Infrastructure.ILoggerManager">
             <summary>
              Interface Logger Manager
@@ -56,6 +128,11 @@
             <param name="app"></param>
             <param name="logger"></param>
         </member>
+        <member name="T:Division2ReconService.Models.CustomerMachineResponseDto">
+            <summary>
+            Customer Machines Dto
+            </summary>
+        </member>
         <member name="T:Division2ReconService.Profiles.AutoMapperProfile">
             <summary>
             
@@ -76,21 +153,33 @@
             
             </summary>
         </member>
-        <member name="M:Division2ReconService.Services.CustomerService.GetActiveCustomers">
+        <member name="M:Division2ReconService.Services.CustomerService.GetActiveCustomersAsync">
             <summary>
             Get active customers
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Division2ReconService.Services.CustomerService.GetCustomerMachinesAsync">
+            <summary>
+            Get Customer machines
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Division2ReconService.Services.ICustomerService">
             <summary>
              Customer Service Contract
             </summary>
         </member>
-        <member name="M:Division2ReconService.Services.ICustomerService.GetActiveCustomers">
+        <member name="M:Division2ReconService.Services.ICustomerService.GetActiveCustomersAsync">
             <summary>
             Get active customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Division2ReconService.Services.ICustomerService.GetCustomerMachinesAsync">
+            <summary>
+            Get Customer Machines
             </summary>
             <returns></returns>
         </member>
