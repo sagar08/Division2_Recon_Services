@@ -38,7 +38,7 @@ namespace Division2ReconService.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<CustomerResponseDto>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult> GetActiveCustomers()
+        public async Task<IActionResult> GetActiveCustomers()
         {
             _logger.LogInfo("Fetching active customers");
             var customers = await _customerService.GetActiveCustomersAsync();
@@ -62,7 +62,7 @@ namespace Division2ReconService.Controllers
         [Route("Machines")]
         [ProducesResponseType(typeof(IEnumerable<CustomerMachineResponseDto>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult> GetCustomerMachines()
+        public async Task<IActionResult> GetCustomerMachines()
         {
             var machines = await _customerService.GetCustomerMachinesAsync();
             if (machines == null) return NotFound();

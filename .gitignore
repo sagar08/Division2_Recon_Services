@@ -7,3 +7,6 @@
 /src/Division2ReconService/bin
 /.vs/Division2_Recon_Services/DesignTimeBuild/.dtbcache.v2
 /.vs/Division2_Recon_Services/v17/.futdcache.v1
+/.vs/Division2_Recon_Services
+/src/Division2ReconService.Test/bin/Debug/net6.0
+/src/Division2ReconService.Test/obj

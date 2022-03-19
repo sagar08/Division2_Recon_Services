@@ -24,7 +24,7 @@
         </member>
         <member name="M:Division2ReconService.Controllers.CustomersController.GetCustomerMachines">
             <summary>
-            Get active customers
+            Get customers machines
             </summary>
             <returns>List of customers</returns>        
         </member>
