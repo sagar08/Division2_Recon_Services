@@ -30,7 +30,6 @@ builder.Services.ConfigureLoggerService();
 builder.Services.AddHealthChecks()
     .AddCheck("Service", () => { return HealthCheckResult.Healthy("OK"); })
     .AddCheck("SQL Database", () => { return HealthCheckResult.Healthy("OK"); });
-//builder.Services.AddHealthChecksUI();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
