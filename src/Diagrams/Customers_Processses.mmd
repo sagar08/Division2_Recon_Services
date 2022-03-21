@@ -1,0 +1,17 @@
+sequenceDiagram
+autonumber
+
+actor User
+participant Server
+participant SQLite Database
+
+    User ->> + Server: Request Processes
+    Server ->> + SQLite Database: List of Processes
+
+    alt if - Data not found
+        SQLite Database -->> Server: return empty
+        Server ->> User: Response Not found
+    else else - Data found
+        SQLite Database -->> Server: Return Processes
+        Server ->> User: Response - Processes        
+    end
